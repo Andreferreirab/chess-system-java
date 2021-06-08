@@ -53,7 +53,14 @@ public class UI {
 		printBoard(chessMatch.getPieces());
 		System.out.println();
 		System.out.println("Turn: " + chessMatch.getTurn());
-		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+		System.out.print("Waiting player: ");
+		if (chessMatch.getCurrentPlayer() == Color.WHITE) {
+			System.out.print(chessMatch.getCurrentPlayer() + ANSI_RESET);			
+		}
+		else {
+			System.out.print(ANSI_YELLOW + chessMatch.getCurrentPlayer() + ANSI_RESET);
+		}
+		System.out.println();
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces) {
